@@ -17,7 +17,7 @@ public class SellerEntry {
 			PreparedStatement ps = conn.prepareStatement("INSERT INTO  productdetails  (category,brand,price,productdiscription) "
 					+ "VALUE (?,?,?,?);");
 			Scanner sc = new Scanner(System.in);
-			System.out.println("Product Details entry Started ");
+			System.out.println("Product Details entry Started for Seller only ");
 			
 			System.out.println("Enter Product category(Watch,Shoes,Mobile,Laptop,Earphone) ");
 			ps.setString(1, sc.nextLine());	

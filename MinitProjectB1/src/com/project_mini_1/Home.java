@@ -1,23 +1,33 @@
 package com.project_mini_1;
 
+import java.io.IOException;
+import java.util.Scanner;
+
 // this class is for showing main e-comarse info
 
 public class Home {
 // https://github.com/surajsdudhe/miniB1Project.git
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub  
-		System.out.println(" Enter 1  for log in");  
-		System.out.println(" Enter 2  for Prodyct Category type in");  
-		System.out.println(" Enter 3  for Cart in");  
-		System.out.println(" Enter 4  for Order in");  
-		System.out.println(" Enter 5  For logOut");  
-		Registration obj = new Registration();
-		//obj.newRegistration();
 		
-		SellerEntry objSeller = new SellerEntry();
-		objSeller.newProduct();
-
+		
+		System.out.println("Welcome to B1Ecommerce");
+		System.out.println("SSG pvt ltd Mumbai");
+		System.out.println("");
+		
+       Navigation objNavigate = new Navigation();
+       objNavigate.navigateMe();
+       
+       Home objMain = new Home();
+      objMain.mainCaller(); /// calling main method again
 	}
+	
+	void mainCaller()
+    {
+		
+        // Calling the main() method
+        Home.main(null);
+    }
 
+	
 }
