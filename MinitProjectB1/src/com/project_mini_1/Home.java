@@ -1,5 +1,7 @@
 package com.project_mini_1;
 
+// this class is for showing main e-comarse info
+
 public class Home {
 // https://github.com/surajsdudhe/miniB1Project.git
 	
