@@ -30,11 +30,15 @@ public class Navigation {
 	int selectAction = sc.nextInt();
 	if(selectAction==1) {
 		Login objLogin = new Login();
+		objLogin.LoginMe();
 		
 	}else if(selectAction==2) {
 		Logout objLogout = new Logout();
 	}else if(selectAction==3) {
 		Registration objReg = new Registration();
+		
+		objReg.newRegistration();
+		
 	}else if(selectAction==4) {
 		CartInfo objCart = new CartInfo();
 	}else if(selectAction==5) {

@@ -27,7 +27,7 @@ public class SellerEntry {
 			ps.setString(3, sc.nextLine());	
 			System.out.println("Enter product discription");
 			ps.setString(4, sc.nextLine());	
-			
+			sc.close();
 			
 			ps.executeUpdate();
 			System.out.println("Product Entry Done");
