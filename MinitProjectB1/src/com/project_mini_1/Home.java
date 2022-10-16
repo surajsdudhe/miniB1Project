@@ -12,6 +12,8 @@ public class Home {
 		System.out.println(" Enter 3  for Cart in");  
 		System.out.println(" Enter 4  for Order in");  
 		System.out.println(" Enter 5  For logOut");  
+		Registration obj = new Registration();
+		obj.newRegistration();
 
 	}
 
