@@ -38,15 +38,7 @@ public class Product {
 				//System.out.println(i1+" "+i2+" "+i3+" "+i4+" "+i5);
 				
 				System.out.format(leftAlignFormat ,i1,i2,i3,i4,i5);
-				  
-				//System.out.format(leftAlignFormat,"i","i","i","i","i");
-				//System.out.print(rs.getString(1) + rs.getString(2)+ rs.getString(3)+ rs.getString(4)+rs.getString(5));
-				//System.out.println();
-				//System.out.print(rs.getString(1)+" ");
-				//System.out.print(rs.getString(2)+" ");
-				//System.out.print(rs.getString(3)+" ");
-				//System.out.print(rs.getString(4)+" ");
-				//System.out.println(rs.getString(5)+" ");
+				
 				System.out.format("+-----+--------------+-------------+-------------+------------------------------------------------------------------------------+%n");
 				
 			}

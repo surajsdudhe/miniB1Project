@@ -15,18 +15,18 @@ public class Navigation {
 	int select = sc.nextInt();
 	
 	if(select == 1) {
-	leftAlignFormat = "| %-12s|  %-11s|  %-11s|  %-10s|  %-10s |%n";	
+	leftAlignFormat = "| %-12s|  %-11s|  %-11s|  %-10s|  %-10s|  %-10s |%n";	
 	System.out.println("Enter number in the console for further action");
-	System.out.format("+---------+------------+-------------------+-------------+-------------+%n");
-	System.out.format("|Log in(1)|Log out(2)  |New Registration(3)|Your  Cart(4)|Tour Order(5)|%n");
-	System.out.format("+---------+------------+-------------------+-------------+-------------+%n");
+	System.out.format("+---------+------------+-------------------+-------------+-------------+-----------------+%n");
+	System.out.format("|Log in(1)|Log out(2)  |New Registration(3)|Your  Cart(4)|Tour Order(5)|Filter Product(6)|%n");
+	System.out.format("+---------+------------+-------------------+-------------+-------------+-----------------+%n");
 	//fetching product details from product table
 	Product objProduct = new Product();
 	objProduct.productDetails();
 	System.out.println("Enter number in the console for further action");
-	System.out.format("+---------+------------+-------------------+-------------+-------------+%n");
-	System.out.format("|Log in(1)|Log out(2)  |New Registration(3)|Your  Cart(4)|Tour Order(5)|%n");
-	System.out.format("+---------+------------+-------------------+-------------+-------------+%n");
+	System.out.format("+---------+------------+-------------------+-------------+-------------+-----------------+%n");
+	System.out.format("|Log in(1)|Log out(2)  |New Registration(3)|Your  Cart(4)|Tour Order(5)|Filter Product(6)|%n");
+	System.out.format("+---------+------------+-------------------+-------------+-------------+-----------------+%n");
 	int selectAction = sc.nextInt();
 	if(selectAction==1) {
 		Login objLogin = new Login();
@@ -43,6 +43,9 @@ public class Navigation {
 		CartInfo objCart = new CartInfo();
 	}else if(selectAction==5) {
 		OrderInfo objOrder = new OrderInfo();
+	}else if(selectAction==6) {
+		SortProduct objSort=new SortProduct();
+				objSort.sortMyProduct();
 	}else {
 		System.out.println("Enter Valid Selection");		
 	}

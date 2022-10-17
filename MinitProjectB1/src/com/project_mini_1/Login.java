@@ -18,24 +18,24 @@ public class Login {
 		
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerceB1project","root","root");
-			PreparedStatement ps = conn.prepareStatement("SELECT password FROM userinfo WHERE email = ?");
+			PreparedStatement ps = conn.prepareStatement("SELECT email,password FROM userinfo WHERE email = ?");
 			Scanner sc = new Scanner(System.in);
 			System.out.println("Enter email");
 			ps.setString(1, sc.nextLine());	
-			ResultSet resultPass = ps.executeQuery();
-			
-			
-			
-			
-			System.out.println("Saved password "+ resultPass.getString(1));
 			
 			System.out.println("Enter Password");
 			String pass= sc.nextLine();
-			System.out.println("Entered pass: "+pass);
+			ResultSet resultPass = ps.executeQuery();
+			resultPass.next();
+			String i1 =resultPass.getString(2);
+			
+			System.out.println("Entered_Pass: "+pass);
+			System.out.println("db_Pass: "+i1);
+			//System.out.println( resultPass.getString(2));
 			
 			//System.out.println("Comapre password"+pass.equals((String)resultPass.getString(1)));
 			
-			if(pass==(resultPass.getString(1)) ) {
+			if(pass.equals(resultPass.getString(2)) ) {
 				System.out.println("Login Successfull");
 			}else{
 				System.out.println("Wrong Credential");

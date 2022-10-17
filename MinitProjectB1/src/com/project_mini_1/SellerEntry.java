@@ -20,6 +20,7 @@ public class SellerEntry {
 			System.out.println("Product Details entry Started for Seller only ");
 			
 			System.out.println("Enter Product category(Watch,Shoes,Mobile,Laptop,Earphone) ");
+			
 			ps.setString(1, sc.nextLine());	
 			System.out.println("Enter Product brand");
 			ps.setString(2, sc.nextLine());	
@@ -27,12 +28,12 @@ public class SellerEntry {
 			ps.setString(3, sc.nextLine());	
 			System.out.println("Enter product discription");
 			ps.setString(4, sc.nextLine());	
-			sc.close();
+			
 			
 			ps.executeUpdate();
 			System.out.println("Product Entry Done");
 			
-//			ResultSet st = stmt.executeQuery();
+			
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
