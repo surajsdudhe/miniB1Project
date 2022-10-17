@@ -11,6 +11,8 @@ public class AddtoCart {
 	public void addCartM() {
 		try {
 			
+			
+			//check login status before cart add procedure
 			CheckLogin ObjCheckLogin = new CheckLogin();
 			ObjCheckLogin.checkMyLogin();
 			

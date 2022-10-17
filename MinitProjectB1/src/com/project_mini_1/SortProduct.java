@@ -61,15 +61,20 @@ public class SortProduct {
 			
 			while(resultProduct.next()) {
 				System.out.format(leftAlignFormat, resultProduct.getString(1),resultProduct.getString(2),resultProduct.getString(3),resultProduct.getString(4),"|");
-
-				
 				System.out.format("+------+-------------+-------------+------------------------------------------------------+%n");	
 			}
-				
-			System.out.println("Select Product ID for adding to Cart");
-			AddtoCart objCart = new AddtoCart();
-			objCart.addCartM();
-	  		
+			
+			
+			System.out.println("Enter 1 for product selection or  2 for home");
+			int y = sc.nextInt();
+			if(y==1 ) {
+				System.out.println("Select Product ID for adding to Cart");
+				AddtoCart objCart = new AddtoCart();
+				objCart.addCartM();
+			}else {
+				Navigation objnev = new Navigation();
+				objnev.navigateMe();
+			}
 			
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block

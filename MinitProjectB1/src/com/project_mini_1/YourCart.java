@@ -5,25 +5,23 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 
-public class OrderInfo {
+public class YourCart {
 	
-	public void myOrderInfo() {
-		
-		CheckLogin objLog = new CheckLogin();
-		objLog.checkMyLogin();
-		String emailuser =objLog.getUserName();
-		
-		
-		System.out.println("your Order  info as follows");
+	
+
+	public void yourCartInfo(String email) {
+		System.out.println("your cart info as follows");
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerceB1project","root","root");
 			//Statement stmt = conn.createStatement();
 			//ResultSet rs = stmt.executeQuery("SELECT productid,category,brand,price as priceInINR,productdiscription FROM productdetails");
-			
-			PreparedStatement ps = conn.prepareStatement("SELECT t.* FROM productdetails AS t    INNER JOIN orderinformation AS tr ON t.productid= tr.productid WHERE email= ?");
+			CheckLogin objLog = new CheckLogin();
+			String emailuser =objLog.getUserName();
+			PreparedStatement ps = conn.prepareStatement("SELECT t.* FROM productdetails AS t    INNER JOIN cartinformation AS tr ON t.productid= tr.productid WHERE email= ?");
 			ps.setString(1, emailuser);
 			//ResultSet rs = stmt.executeQuery("SELECT t.* FROM productdetails AS t    INNER JOIN cartinformation AS tr ON t.productid= tr.productid WHERE email= ?");
 			ResultSet rs = ps.executeQuery();
@@ -50,25 +48,43 @@ public class OrderInfo {
 				
 				System.out.format("+-----+--------------+-------------+-------------+------------------------------------------------------------------------------+%n");
 				
+			
 				
 				
+			}
+			Scanner sc = new Scanner(System.in);
+			
+			////////////////////
+			System.out.println("Enter 1 for continew payment or  2 for home");
+			int y = sc.nextInt();
+			if(y==1 ) {
+				System.out.println("Select 1 for payment and select 2 for more carting");
+				int option = sc.nextInt();
+				if(option == 1 ) {
+					//payment procedure
+					PaymentProcedure objPayment = new PaymentProcedure();
+					objPayment.myPaymentProcedure();
+				}else if(option==2) {
+					SortProduct objSort = new SortProduct();
+					objSort.sortMyProduct();
+				}else {
+					System.out.println("Select Correct option");
+				}
+			}else {
+				Navigation objnev = new Navigation();
+				objnev.navigateMe();
 			}
 			
-			System.out.println("Enter 1 for home page ");
-			int x =0;
-			Scanner sc = new Scanner(System.in);
-			while(x==0) {
-				x=sc.nextInt();
-			}
-			Navigation objNev = new Navigation();
-					objNev.navigateMe();
+			////////////////////
+			
+			
+			
+			
 			
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 		
 		
 	}
