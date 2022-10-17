@@ -15,6 +15,18 @@ public class Navigation {
 	int select = sc.nextInt();
 	
 	if(select == 1) {
+		
+		//check login
+				CheckLogin ObjCheckLogin = new CheckLogin();
+				String objEmail = ObjCheckLogin.getUserName();
+				if(objEmail==null) {
+					System.out.println("login for Beter Experience");
+					
+				}else {
+					System.out.println("Welcome:-"+objEmail);
+				}
+				
+				//table view
 	leftAlignFormat = "| %-12s|  %-11s|  %-11s|  %-10s|  %-10s|  %-10s |%n";	
 	System.out.println("Enter number in the console for further action");
 	System.out.format("+---------+------------+-------------------+-------------+-------------+-----------------+%n");
@@ -29,8 +41,14 @@ public class Navigation {
 	System.out.format("+---------+------------+-------------------+-------------+-------------+-----------------+%n");
 	int selectAction = sc.nextInt();
 	if(selectAction==1) {
+		
+		
+		ObjCheckLogin.checkMyLogin();
+		String email =ObjCheckLogin.getUserName();
+		if (email ==null) {
 		Login objLogin = new Login();
 		objLogin.LoginMe();
+		}else {System.out.println("You are already logIn:-"+ email);}
 		
 	}else if(selectAction==2) {
 		Logout objLogout = new Logout();
